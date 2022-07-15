@@ -14,11 +14,16 @@ setInterval(() => {
 
 }, 500);
 
-let audio = new Audio('Assets/Tick-tock.wav');
-let music = true;
+window.onload = function () {
+    let audio = new Audio('Assets/Tick-tock.wav');
 
-if(music == true){
-    audio.playbackRate = 0.5;
-    audio.play();
-    audio.loop = true;
+    const body = document.querySelector('body');
+
+    function tick() {
+        audio.playbackRate = 0.5;
+        audio.play();
+        audio.loop = true;
+    }
+
+    body.addEventListener('mouseover', tick);
 }
